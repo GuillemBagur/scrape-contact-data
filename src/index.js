@@ -17,6 +17,5 @@ app.listen(3000, () => console.log("listening on port 3000"));
 app.get("/", async (req, res) => {
   const query = req.query.q;
   const data = await getPossibleCustomers(query);
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4000");
   res.json(data);
 });
