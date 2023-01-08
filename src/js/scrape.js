@@ -75,7 +75,7 @@ const fuzz = async (url, searchFor = undefined) => {
 
   const res = await scrape(contactPath).catch((err) => {});
 
-  return res[searchFor] ?? res;
+  return res[searchFor] || res;
 };
 
 /**
@@ -134,7 +134,7 @@ const extractData = async (url) => {
 
   const res = {
     url: url,
-    emails: emails ?? [],
+    emails: emails || [],
   };
 
   return res;
